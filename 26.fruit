@@ -1,0 +1,17 @@
+
+fruit_color(apple, red).
+fruit_color(banana, yellow).
+fruit_color(grape, purple).
+fruit_color(orange, orange).
+fruit_color(lemon, yellow).
+fruit_color(strawberry, red).
+fruit_color(blueberry, blue).
+
+find_fruit(Fruit, Color) :-
+    fruit_color(Fruit, Color).
+
+find_fruit(Fruit, Color) :-
+    fruit_color(Fruit, Color1),
+    Color \= Color1,
+    write('Another color of '), write(Fruit), write(' is '), write(Color1), nl,
+    fail.
